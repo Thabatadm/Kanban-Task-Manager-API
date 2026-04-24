@@ -23,13 +23,8 @@ public class Project {
 
     private LocalDateTime createdAt;
 
-    @ManyToMany
-    @JoinTable(
-            name = "project_users",
-            joinColumns = @JoinColumn(name = "project_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
-    private List<User> members;
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProjectUser> members;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     private List<Card> cards;

@@ -25,9 +25,10 @@ public class User {
     @Column(nullable = false)
     private String lastName;
 
+
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany(mappedBy = "members")
-    private List<Project> projects;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProjectUser> projects;
 }
