@@ -4,6 +4,7 @@ import com.example.demo.model.Card;
 import com.example.demo.model.Status;
 import com.example.demo.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -22,19 +23,31 @@ public class CardService {
             card.setStatus(Status.TO_DO);
         }
 
+        if (card.getPosition() == null) {
+            List<Card> existingCards = cardRepository.findByProjectIdOrderByPositionAsc(card.getProject().getId());
+            card.setPosition(existingCards.size() + 1);
+        }
+
         return cardRepository.save(card);
 
     }
 
-    public Card cardUpdate(Long cardId, Status newStatus){
+    @Transactional
+    public Card updateCardDetails(Long cardId, Card cardDetails) {
         Card card = cardRepository.findById(cardId)
                 .orElseThrow(() -> new RuntimeException("Card not found"));
+
+
+        if (cardDetails.getTitle() != null) card.setTitle(cardDetails.getTitle());
+        if (cardDetails.getDescription() != null) card.setDescription(cardDetails.getDescription());
+        if (cardDetails.getPriority() != null) card.setPriority(cardDetails.getPriority());
+        if (cardDetails.getDueDate() != null) card.setDueDate(cardDetails.getDueDate());
+        if (cardDetails.getStatus() != null) card.setStatus(cardDetails.getStatus());
+        if (cardDetails.getAssignee() != null) {card.setAssignee(cardDetails.getAssignee());}
+
         card.setUpdatedAt(LocalDateTime.now());
-        card.setStatus(newStatus);
 
         return cardRepository.save(card);
-
-
     }
 
     public List<Card> getCardsbyProject(Long projectId){

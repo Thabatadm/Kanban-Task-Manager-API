@@ -43,15 +43,22 @@ public class UserService {
         return userRepository.save(user);
     }
 
-
     @Transactional
     public User updateUser(User userDetails) {
-        User user = getCurrentUser(); // Solo el usuario dueño de la cuenta puede editarse
+        User user = getCurrentUser();
 
-        user.setName(userDetails.getName());
-        user.setLastName(userDetails.getLastName());
 
-        // Si decide cambiar el password
+        if (userDetails.getName() != null) user.setName(userDetails.getName());
+        if (userDetails.getLastName() != null) user.setLastName(userDetails.getLastName());
+
+
+        if (userDetails.getEmail() != null && !userDetails.getEmail().equals(user.getEmail())) {
+            if (userRepository.findByEmail(userDetails.getEmail()).isPresent()) {
+                throw new RuntimeException("Email ya está en uso");
+            }
+            user.setEmail(userDetails.getEmail());
+        }
+
         if (userDetails.getPassword() != null && !userDetails.getPassword().isEmpty()) {
             user.setPassword(passwordEncoder.encode(userDetails.getPassword()));
         }
