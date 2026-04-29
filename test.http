@@ -1,0 +1,126 @@
+@host = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2NDMyOSwiZXhwIjoxNzc3NTUwNzI5fQ.7SV7YZFZUyfZhj5s4TBlE59_yCAqbt2vdOkeILIX8a4
+@projectId = 1
+@cardId = 1
+
+### Crear cuenta de Usuario
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Patricia",
+  "lastName": "Gomez",
+  "email": "patricia@example.com",
+  "password": "password123"
+}
+
+### Crear cuenta de Usuario para añadir miembro
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Pedro",
+  "lastName": "Martinez",
+  "email": "Martinez@example.com",
+  "password": "password123"
+}
+
+### Login de Usuario
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "patricia@example.com",
+  "password": "password123"
+}
+
+### Obtener mi perfil
+GET {{host}}/api/user/me
+Authorization: Bearer {{token}}
+
+### Actualizar mi usuario
+PUT {{host}}/api/user/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Patricia Editado",
+  "lastName": "Gomez Perez"
+}
+
+### Borrar mi cuenta //
+DELETE {{host}}/api/user/delete
+Authorization: Bearer {{token}}
+
+### Crear Proyecto
+POST {{host}}/api/projects/create
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Sistema de Gestión v1",
+  "description": "Desarrollo del backend con Spring Boot"
+}
+
+### Obtener mis Proyectos
+GET {{host}}/api/projects
+Authorization: Bearer {{token}}
+
+### Actualizar Proyecto
+PUT {{host}}/api/projects/update/{{projectId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Proyecto Renombrado",
+  "description": "Nueva descripción actualizada"
+}
+
+### Añadir Miembro al Proyecto (Usando el nuevo DTO)
+POST {{host}}/api/projects/{{projectId}}/members
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "role": "DEVELOPER"
+}
+
+### Eliminar un miembro del proyecto
+DELETE http://localhost:8080/api/projects/1/members/2
+Authorization: Bearer {{token}}
+
+### Eliminar un Proyecto completo
+DELETE http://localhost:8080/api/projects/delete/{{projectId}}
+Authorization: Bearer {{token}}
+
+### Crear una Card
+POST http://localhost:8080/api/projects/1/cards/create
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Nueva Tarea",
+  "description": "Descripción de la tarea",
+  "status": "TO_DO",
+  "priority": "MEDIUM"
+}
+
+### Obtener todas las Cards de un Proyecto
+GET {{host}}/api/projects/{{projectId}}/cards
+Authorization: Bearer {{token}}
+
+### Actualizar una Card
+PUT {{host}}/api/projects/{{projectId}}/cards/update/{{cardId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Nuevo título",
+  "status": "REVIEW",
+  "assigneeId": 2
+}
+
+### Borrar una Card
+DELETE {{host}}/api/projects/{{projectId}}/cards/delete/{{cardId}}
+Authorization: Bearer {{token}}
