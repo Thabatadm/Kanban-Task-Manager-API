@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Proyecto Renombrado",
+    "description": "Nueva descripción actualizada",
+    "createdAt": "2026-04-29T13:45:13.305615",
+    "members": [
+      {
+        "id": 1,
+        "project": {
+          "id": 1,
+          "name": "Proyecto Renombrado",
+          "description": "Nueva descripción actualizada",
+          "createdAt": "2026-04-29T13:45:13.305615",
+          "cards": []
+        },
+        "role": "MASTER"
+      },
+      {
+        "id": 2,
+        "project": {
+          "id": 1,
+          "name": "Proyecto Renombrado",
+          "description": "Nueva descripción actualizada",
+          "createdAt": "2026-04-29T13:45:13.305615",
+          "cards": []
+        },
+        "role": "DEVELOPER"
+      }
+    ],
+    "cards": []
+  }
+]

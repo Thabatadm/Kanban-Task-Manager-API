@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "Nuevo título",
+    "description": "Descripción de la tarea",
+    "status": "REVIEW",
+    "position": null,
+    "priority": "MEDIUM",
+    "createdAt": "2026-04-29T14:00:14.133802",
+    "updatedAt": "2026-04-29T14:00:37.38254",
+    "dueDate": null,
+    "project": {
+      "id": 1,
+      "name": "Proyecto Renombrado",
+      "description": "Nueva descripción actualizada",
+      "createdAt": "2026-04-29T13:59:36.919735"
+    },
+    "assignee": {
+      "id": 2,
+      "email": "martinez@example.com",
+      "name": "Pedro",
+      "lastName": "Martinez",
+      "enabled": true,
+      "authorities": [],
+      "username": "martinez@example.com",
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "accountNonLocked": true
+    }
+  }
+]

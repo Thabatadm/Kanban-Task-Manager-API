@@ -1,0 +1,11 @@
+// Size: 86 B
+### Actualizar Proyecto
+PUT http://localhost:8080/api/projects/update/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MzA4NSwiZXhwIjoxNzc3NTQ5NDg1fQ.iisZT-74LdZFv6bUXLGUH2ffY0hieRlqa8XbumGBJYU
+Content-Type: application/json
+Content-Length: 86
+
+{
+  "name": "Proyecto Renombrado",
+  "description": "Nueva descripción actualizada"
+}

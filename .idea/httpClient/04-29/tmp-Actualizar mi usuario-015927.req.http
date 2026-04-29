@@ -1,0 +1,11 @@
+// Size: 61 B
+### Actualizar mi usuario
+PUT http://localhost:8080/api/user/update HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MzkzNCwiZXhwIjoxNzc3NTUwMzM0fQ.GQNHgJAls-l4LIGu68kqAIGBddeYWJwzonWoxhFDalo
+Content-Type: application/json
+Content-Length: 61
+
+{
+  "name": "Patricia Editado",
+  "lastName": "Gomez Perez"
+}

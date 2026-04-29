@@ -1,0 +1,11 @@
+// Size: 40 B
+### Añadir Miembro al Proyecto (Usando el nuevo DTO)
+POST http://localhost:8080/api/projects/1/members HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2NDMyOSwiZXhwIjoxNzc3NTUwNzI5fQ.7SV7YZFZUyfZhj5s4TBlE59_yCAqbt2vdOkeILIX8a4
+Content-Type: application/json
+Content-Length: 40
+
+{
+  "userId": 2,
+  "role": "DEVELOPER"
+}

@@ -1,0 +1,17 @@
+// Status: 200, time: 213ms, size: 163 B
+### Login de Usuario
+POST http://localhost:8080/auth/login HTTP/1.1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+content-type: application/json
+date: Tue, 28 Apr 2026 22:01:59 GMT
+expires: 0
+pragma: no-cache
+transfer-encoding: chunked
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 0
+
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQxMzcxOSwiZXhwIjoxNzc3NTAwMTE5fQ.mYC7X8_ZSqzDFYxmtS8yNla7w13njNubVEoqOpwgdYU"
+}
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Login de Usuario\2026-04-29T000200.json

@@ -1,0 +1,16 @@
+// Status: 204, time: 276ms, size: 0 B
+### Borrar mi cuenta
+DELETE http://localhost:8080/api/user/delete HTTP/1.1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+date: Wed, 29 Apr 2026 09:56:46 GMT
+expires: 0
+pragma: no-cache
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 0
+
+
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Borrar mi cuenta\2026-04-29T115646.txt

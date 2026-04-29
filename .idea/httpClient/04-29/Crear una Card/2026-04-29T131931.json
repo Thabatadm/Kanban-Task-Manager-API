@@ -1,0 +1,68 @@
+{
+  "id": 1,
+  "title": "Nueva Tarea",
+  "description": "Descripción de la tarea",
+  "status": "TO_DO",
+  "position": null,
+  "priority": "MEDIUM",
+  "createdAt": "2026-04-29T13:19:31.6379765",
+  "updatedAt": "2026-04-29T13:19:31.6379765",
+  "dueDate": null,
+  "project": {
+    "id": 1,
+    "name": "Sistema de Gestión v1",
+    "description": "Desarrollo del backend con Spring Boot",
+    "createdAt": "2026-04-29T13:19:07.299914",
+    "members": [
+      {
+        "id": 1,
+        "project": {
+          "id": 1,
+          "name": "Sistema de Gestión v1",
+          "description": "Desarrollo del backend con Spring Boot",
+          "createdAt": "2026-04-29T13:19:07.299914",
+          "cards": [
+            {
+              "id": 1,
+              "title": "Nueva Tarea",
+              "description": "Descripción de la tarea",
+              "status": "TO_DO",
+              "position": null,
+              "priority": "MEDIUM",
+              "createdAt": "2026-04-29T13:19:31.6379765",
+              "updatedAt": "2026-04-29T13:19:31.6379765",
+              "dueDate": null,
+              "assignee": null
+            }
+          ]
+        },
+        "role": "MASTER"
+      },
+      {
+        "id": 2,
+        "project": {
+          "id": 1,
+          "name": "Sistema de Gestión v1",
+          "description": "Desarrollo del backend con Spring Boot",
+          "createdAt": "2026-04-29T13:19:07.299914",
+          "cards": [
+            {
+              "id": 1,
+              "title": "Nueva Tarea",
+              "description": "Descripción de la tarea",
+              "status": "TO_DO",
+              "position": null,
+              "priority": "MEDIUM",
+              "createdAt": "2026-04-29T13:19:31.6379765",
+              "updatedAt": "2026-04-29T13:19:31.6379765",
+              "dueDate": null,
+              "assignee": null
+            }
+          ]
+        },
+        "role": "DEVELOPER"
+      }
+    ]
+  },
+  "assignee": null
+}

@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "email": "patricia@example.com",
+  "name": "Patricia Editado",
+  "lastName": "Gomez Perez",
+  "projects": [],
+  "enabled": true,
+  "username": "patricia@example.com",
+  "authorities": [],
+  "accountNonLocked": true,
+  "accountNonExpired": true,
+  "credentialsNonExpired": true
+}

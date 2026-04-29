@@ -1,0 +1,25 @@
+{
+  "id": 1,
+  "name": "Proyecto Renombrado",
+  "description": "Nueva descripción actualizada",
+  "createdAt": "2026-04-29T13:59:36.919735",
+  "members": [
+    {
+      "id": 1,
+      "user": {
+        "id": 1,
+        "email": "patricia@example.com",
+        "name": "Patricia Editado",
+        "lastName": "Gomez Perez",
+        "enabled": true,
+        "authorities": [],
+        "username": "patricia@example.com",
+        "accountNonExpired": true,
+        "credentialsNonExpired": true,
+        "accountNonLocked": true
+      },
+      "role": "MASTER"
+    }
+  ],
+  "cards": []
+}

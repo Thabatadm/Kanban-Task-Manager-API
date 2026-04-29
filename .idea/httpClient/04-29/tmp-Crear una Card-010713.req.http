@@ -1,0 +1,11 @@
+// Size: 73 B
+### Crear una Card
+POST http://localhost:8080/api/projects/1/cards/create HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MDYyNiwiZXhwIjoxNzc3NTQ3MDI2fQ.Smt6lC7FHo77F5ouzH48jBZGcCidnjw0KWFWYyF1Q7M
+Content-Type: application/json
+Content-Length: 73
+
+{
+  "title": "Nueva Tarea",
+  "description": "Descripción de la tarea"
+}

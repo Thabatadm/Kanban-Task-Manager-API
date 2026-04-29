@@ -1,0 +1,12 @@
+// Size: 110 B
+### Crear una Card
+POST http://localhost:8080/api/projects/1/cards/create HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MDE0NywiZXhwIjoxNzc3NTQ2NTQ3fQ.4ch8qxLZIB46Os9CsTyvunDsxF-RiJt_qhEl62JKqXM
+Content-Type: application/json
+Content-Length: 110
+
+{
+  "title": "Configurar Seguridad",
+  "description": "Implementar JWT y filtros",
+  "status": "IN_PROGRESS"
+}

@@ -1,0 +1,85 @@
+// Status: 200, time: 463ms, size: 1,25 kB
+### Crear una Card
+POST http://localhost:8080/api/projects/1/cards/create HTTP/1.1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+content-type: application/json
+date: Wed, 29 Apr 2026 11:38:50 GMT
+expires: 0
+pragma: no-cache
+transfer-encoding: chunked
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 0
+
+{
+  "id": 1,
+  "title": "Nueva Tarea",
+  "description": "Descripción de la tarea",
+  "status": "TO_DO",
+  "position": null,
+  "priority": "MEDIUM",
+  "createdAt": "2026-04-29T13:38:50.4305034",
+  "updatedAt": "2026-04-29T13:38:50.4315054",
+  "dueDate": null,
+  "project": {
+    "id": 1,
+    "name": "Sistema de Gestión v1",
+    "description": "Desarrollo del backend con Spring Boot",
+    "createdAt": "2026-04-29T13:38:35.640353",
+    "members": [
+      {
+        "id": 1,
+        "project": {
+          "id": 1,
+          "name": "Sistema de Gestión v1",
+          "description": "Desarrollo del backend con Spring Boot",
+          "createdAt": "2026-04-29T13:38:35.640353",
+          "cards": [
+            {
+              "id": 1,
+              "title": "Nueva Tarea",
+              "description": "Descripción de la tarea",
+              "status": "TO_DO",
+              "position": null,
+              "priority": "MEDIUM",
+              "createdAt": "2026-04-29T13:38:50.4305034",
+              "updatedAt": "2026-04-29T13:38:50.4315054",
+              "dueDate": null,
+              "assignee": null
+            }
+          ]
+        },
+        "role": "MASTER"
+      },
+      {
+        "id": 2,
+        "project": {
+          "id": 1,
+          "name": "Sistema de Gestión v1",
+          "description": "Desarrollo del backend con Spring Boot",
+          "createdAt": "2026-04-29T13:38:35.640353",
+          "cards": [
+            {
+              "id": 1,
+              "title": "Nueva Tarea",
+              "description": "Descripción de la tarea",
+              "status": "TO_DO",
+              "position": null,
+              "priority": "MEDIUM",
+              "createdAt": "2026-04-29T13:38:50.4305034",
+              "updatedAt": "2026-04-29T13:38:50.4315054",
+              "dueDate": null,
+              "assignee": null
+            }
+          ]
+        },
+        "role": "DEVELOPER"
+      }
+    ]
+  },
+  "assignee": null
+}
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Crear una Card\2026-04-29T133850.json

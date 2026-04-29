@@ -1,0 +1,17 @@
+// Status: 200, time: 561ms, size: 0 B
+### Añadir Miembro al Proyecto (Usando el nuevo DTO)
+POST http://localhost:8080/api/projects/1/members HTTP/1.1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+content-length: 0
+date: Wed, 29 Apr 2026 11:04:14 GMT
+expires: 0
+pragma: no-cache
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 0
+
+
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Añadir Miembro al Proyecto (Usando el nuevo DTO)\2026-04-29T130414.txt
