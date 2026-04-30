@@ -1,0 +1,8 @@
+// Status: 403, time: 8ms, size: 0 B
+### Eliminar un Proyecto completo
+DELETE http://localhost:8080/api/projects//delete/1 HTTP/1.1
+content-length: 0
+date: Wed, 29 Apr 2026 12:11:17 GMT
+
+
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Eliminar un Proyecto completo\2026-04-29T141117.txt

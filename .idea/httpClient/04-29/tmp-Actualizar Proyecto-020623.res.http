@@ -1,0 +1,42 @@
+// Status: 200, time: 485ms, size: 415 B
+### Actualizar Proyecto
+PUT http://localhost:8080/api/projects/update/1 HTTP/1.1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+content-type: application/json
+date: Wed, 29 Apr 2026 12:06:23 GMT
+expires: 0
+pragma: no-cache
+transfer-encoding: chunked
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 0
+
+{
+  "id": 1,
+  "name": "Proyecto Renombrado",
+  "description": "Nueva descripción actualizada",
+  "createdAt": "2026-04-29T14:06:08.952622",
+  "members": [
+    {
+      "id": 1,
+      "user": {
+        "id": 1,
+        "email": "patricia@example.com",
+        "name": "Patricia Editado",
+        "lastName": "Gomez Perez",
+        "enabled": true,
+        "accountNonLocked": true,
+        "credentialsNonExpired": true,
+        "accountNonExpired": true,
+        "authorities": [],
+        "username": "patricia@example.com"
+      },
+      "role": "MASTER"
+    }
+  ],
+  "cards": []
+}
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Actualizar Proyecto\2026-04-29T140623.json

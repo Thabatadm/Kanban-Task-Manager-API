@@ -19,19 +19,13 @@ import java.util.Optional;
 public class CardService {
 
     private final CardRepository cardRepository;
-    private final ProjectUserRepository projectUserRepository;
-    private final UserService userService;
     private final UserRepository userRepository;
     private final ProjectUserService projectUserService;
     private final ProjectRepository projectRepository;
 
-    public CardService(CardRepository cardRepository,
-                       ProjectUserRepository projectUserRepository,
-                       UserService userService, UserRepository userRepository,
+    public CardService(CardRepository cardRepository, UserRepository userRepository,
                        ProjectUserService projectUserService, ProjectRepository projectRepository) {
         this.cardRepository = cardRepository;
-        this.projectUserRepository = projectUserRepository;
-        this.userService = userService;
         this.userRepository = userRepository;
         this.projectUserService = projectUserService;
         this.projectRepository = projectRepository;

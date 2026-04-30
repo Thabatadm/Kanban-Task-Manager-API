@@ -1,0 +1,6 @@
+// Size: 0 B
+### Obtener mis Proyectos
+GET http://localhost:8080/api/projects HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MzkzNCwiZXhwIjoxNzc3NTUwMzM0fQ.GQNHgJAls-l4LIGu68kqAIGBddeYWJwzonWoxhFDalo
+Content-Length: 0
+

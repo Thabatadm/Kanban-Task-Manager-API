@@ -1,0 +1,11 @@
+// Size: 97 B
+### Crear Proyecto
+POST http://localhost:8080/api/projects/create HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ1OTEyMSwiZXhwIjoxNzc3NTQ1NTIxfQ.WQT69zc0mfPxRKbS1RIEFXdTGC63VRFQR1qF3AxZwBo
+Content-Type: application/json
+Content-Length: 97
+
+{
+  "name": "Sistema de Gestión v1",
+  "description": "Desarrollo del backend con Spring Boot"
+}

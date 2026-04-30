@@ -1,0 +1,12 @@
+// Size: 71 B
+### Actualizar una Card
+PUT http://localhost:8080/api/projects/1/cards/update/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ0aW5lekBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MzE5NCwiZXhwIjoxNzc3NTQ5NTk0fQ.pOHcPmvec0pWsZA5wB0zzFVj42vBIXDZNn6qhWeymn8
+Content-Type: application/json
+Content-Length: 71
+
+{
+  "title": "Nuevo título",
+  "status": "REVIEW",
+  "assigneeId": 2
+}

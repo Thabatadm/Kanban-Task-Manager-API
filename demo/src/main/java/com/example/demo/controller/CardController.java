@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import com.example.demo.dto.CardRequest;
 import com.example.demo.dto.CardUpdate;
 import com.example.demo.model.Card;
-import com.example.demo.model.Project;
 import com.example.demo.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,6 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
-    // POST http://localhost:8080/api/projects/1/cards/create
     @PostMapping("/create")
     public ResponseEntity<Card> createCard(
             @PathVariable Long projectId,
@@ -26,19 +24,16 @@ public class CardController {
         return ResponseEntity.ok(cardService.createCard(projectId, cardRequest));
     }
 
-    // PUT http://localhost:8080/api/projects/1/cards/update/5
     @PutMapping("/update/{id}")
     public ResponseEntity<Card> updateCard(@PathVariable Long id, @RequestBody CardUpdate cardUpdateDto) {
         return ResponseEntity.ok(cardService.updateCardDetails(id, cardUpdateDto));
     }
 
-    // GET http://localhost:8080/api/projects/1/cards
     @GetMapping
     public ResponseEntity<List<Card>> getAllCardsByProject(@PathVariable Long projectId) {
         return ResponseEntity.ok(cardService.getCardsByProject(projectId));
     }
 
-    // DELETE http://localhost:8080/api/projects/1/cards/delete/5
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteCard(@PathVariable Long id) {
         cardService.deleteCard(id);

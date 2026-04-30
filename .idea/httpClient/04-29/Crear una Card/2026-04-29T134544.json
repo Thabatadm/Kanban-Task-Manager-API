@@ -1,0 +1,32 @@
+{
+  "id": 1,
+  "title": "Nueva Tarea",
+  "description": "Descripción de la tarea",
+  "status": "TO_DO",
+  "position": null,
+  "priority": "MEDIUM",
+  "createdAt": "2026-04-29T13:45:44.5487541",
+  "updatedAt": "2026-04-29T13:45:44.5487541",
+  "dueDate": null,
+  "project": {
+    "id": 1,
+    "name": "Proyecto Renombrado",
+    "description": "Nueva descripción actualizada",
+    "createdAt": "2026-04-29T13:45:13.305615",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Nueva Tarea",
+        "description": "Descripción de la tarea",
+        "status": "TO_DO",
+        "position": null,
+        "priority": "MEDIUM",
+        "createdAt": "2026-04-29T13:45:44.5487541",
+        "updatedAt": "2026-04-29T13:45:44.5487541",
+        "dueDate": null,
+        "assignee": null
+      }
+    ]
+  },
+  "assignee": null
+}

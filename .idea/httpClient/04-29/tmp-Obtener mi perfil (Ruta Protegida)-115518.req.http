@@ -1,0 +1,6 @@
+// Size: 0 B
+### Obtener mi perfil (Ruta Protegida)
+GET http://localhost:8080/api/user/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ1NjQ4OSwiZXhwIjoxNzc3NTQyODg5fQ.OvWBZtTeYSOLWkh6dmhRsrdijReYG5_8gSnc1DtLcNI
+Content-Length: 0
+

@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+
 
 @Service
 public class UserService {
@@ -56,7 +56,7 @@ public class UserService {
 
         if (userDetails.getEmail() != null && !userDetails.getEmail().equals(user.getEmail())) {
             if (userRepository.findByEmail(userDetails.getEmail()).isPresent()) {
-                throw new RuntimeException("Email ya está en uso");
+                throw new RuntimeException("Email already in use");
             }
             user.setEmail(userDetails.getEmail());
         }

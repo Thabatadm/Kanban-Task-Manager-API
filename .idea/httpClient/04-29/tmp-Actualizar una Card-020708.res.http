@@ -1,0 +1,46 @@
+// Status: 200, time: 353ms, size: 593 B
+### Actualizar una Card
+PUT http://localhost:8080/api/projects/1/cards/update/1 HTTP/1.1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+content-type: application/json
+date: Wed, 29 Apr 2026 12:07:08 GMT
+expires: 0
+pragma: no-cache
+transfer-encoding: chunked
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 0
+
+{
+  "id": 1,
+  "title": "Nuevo título",
+  "description": "Descripción de la tarea",
+  "status": "REVIEW",
+  "position": null,
+  "priority": "MEDIUM",
+  "createdAt": "2026-04-29T14:06:48.378129",
+  "updatedAt": "2026-04-29T14:07:08.2823399",
+  "dueDate": null,
+  "project": {
+    "id": 1,
+    "name": "Proyecto Renombrado",
+    "description": "Nueva descripción actualizada",
+    "createdAt": "2026-04-29T14:06:08.952622"
+  },
+  "assignee": {
+    "id": 2,
+    "email": "martinez@example.com",
+    "name": "Pedro",
+    "lastName": "Martinez",
+    "enabled": true,
+    "accountNonLocked": true,
+    "credentialsNonExpired": true,
+    "accountNonExpired": true,
+    "authorities": [],
+    "username": "martinez@example.com"
+  }
+}
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Actualizar una Card\2026-04-29T140708.json

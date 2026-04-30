@@ -54,7 +54,7 @@ public class ProjectService {
         if (request.getDeveloperIds() != null && !request.getDeveloperIds().isEmpty()) {
             for (Long userId : request.getDeveloperIds()) {
                 User guest = userRepository.findById(userId)
-                        .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID: " + userId));
+                        .orElseThrow(() -> new RuntimeException("\n" +"User not found with ID: " + userId));
 
                 ProjectUser devRelation = new ProjectUser();
                 devRelation.setUser(guest);
@@ -70,7 +70,6 @@ public class ProjectService {
 
     @Transactional
     public Project updateProject(Long projectId, String name, String description) {
-        // Ahora funcionará porque projectUserService ya no es null
         projectUserService.validateMasterPermission(projectId);
 
         Project project = projectRepository.findById(projectId)

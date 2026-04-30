@@ -1,0 +1,21 @@
+// Status: 400, time: 241ms, size: 350 B
+### Crear cuenta de Usuario para añadir miembro
+POST http://localhost:8080/auth/register HTTP/1.1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+connection: close
+content-type: application/json
+date: Wed, 29 Apr 2026 11:56:55 GMT
+expires: 0
+pragma: no-cache
+transfer-encoding: chunked
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 0
+
+{
+  "error": "could not execute statement [ERROR: duplicate key value violates unique constraint \"users_email_key\"\n  Detail: Key (email)=(martinez@example.com) already exists.] [insert into users (email,last_name,name,password) values (?,?,?,?)]; SQL [insert into users (email,last_name,name,password) values (?,?,?,?)]; constraint [users_email_key]"
+}
+>> C:\Users\thaba\Desktop\user_cards\.idea\httpClient\04-29\Crear cuenta de Usuario para añadir miembro\2026-04-29T135655.json

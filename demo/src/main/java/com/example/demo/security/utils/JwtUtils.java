@@ -9,10 +9,10 @@ import java.util.Date;
 
 @Component
 public class JwtUtils {
-    @Value("${app.jwt.secret}") // Lee desde application.properties
+    @Value("${app.jwt.secret}")
     private String SECRET_KEY;
 
-    @Value("${app.jwt.expiration}") // Lee desde application.properties
+    @Value("${app.jwt.expiration}")
     private long EXPIRATION_TIME;
 
     public String generateToken(String email) {

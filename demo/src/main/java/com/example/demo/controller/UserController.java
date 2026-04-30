@@ -20,13 +20,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // GET http://localhost:8080/api/user/me
     @GetMapping("/me")
     public ResponseEntity<User> getMyProfile() {
         return ResponseEntity.ok(userService.getCurrentUser());
     }
 
-    // PUT http://localhost:8080/api/user/update
     @PutMapping("/update")
     public ResponseEntity<User> testUpdate(@RequestBody UpdateUserRequest updateRequest) {
        
@@ -40,7 +38,6 @@ public class UserController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    //DELETE http://localhost:8080/api/user/delete
     @DeleteMapping("/delete")
     public ResponseEntity<Void> deleteUser() {
         userService.deleteUser();

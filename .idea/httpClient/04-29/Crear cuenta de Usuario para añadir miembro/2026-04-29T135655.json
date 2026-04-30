@@ -1,0 +1,3 @@
+{
+  "error": "could not execute statement [ERROR: duplicate key value violates unique constraint \"users_email_key\"\n  Detail: Key (email)=(martinez@example.com) already exists.] [insert into users (email,last_name,name,password) values (?,?,?,?)]; SQL [insert into users (email,last_name,name,password) values (?,?,?,?)]; constraint [users_email_key]"
+}

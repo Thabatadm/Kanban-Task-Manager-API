@@ -1,0 +1,6 @@
+// Size: 0 B
+### Eliminar un Proyecto completo
+DELETE http://localhost:8080/api/projects//delete/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2NDMyOSwiZXhwIjoxNzc3NTUwNzI5fQ.7SV7YZFZUyfZhj5s4TBlE59_yCAqbt2vdOkeILIX8a4
+Content-Length: 0
+

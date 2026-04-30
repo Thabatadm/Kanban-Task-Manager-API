@@ -38,7 +38,7 @@ build/
 .vscode/
 *.iml
 
-# Secretos (Como hablamos antes)
+# Secretos
 application-local.properties
 
 # Archivos de compilación

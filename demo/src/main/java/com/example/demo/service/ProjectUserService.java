@@ -50,10 +50,10 @@ public class ProjectUserService {
         User currentUser = userService.getCurrentUser();
         ProjectUser relation = projectUserRepository
                 .findByProjectIdAndUserId(projectId, currentUser.getId())
-                .orElseThrow(() -> new RuntimeException("No perteneces a este proyecto"));
+                .orElseThrow(() -> new RuntimeException("You do not belong to this project"));
 
         if (relation.getRole() != Role.MASTER) {
-            throw new RuntimeException("Permiso denegado: Solo el MASTER puede realizar esta acción");
+            throw new RuntimeException("Permission denied: Only the MASTER can perform this action");
         }
     }
 

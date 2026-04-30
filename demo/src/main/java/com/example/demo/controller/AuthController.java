@@ -33,7 +33,6 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
-        // Pasamos los datos del DTO al Modelo
         User user = new User();
         user.setName(request.getName());
         user.setLastName(request.getLastName());
@@ -45,7 +44,6 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
-        // Autenticación estándar de Spring Security
         Authentication auth = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                     loginRequest.getEmail(), 

@@ -23,7 +23,6 @@ public class ProjectController {
 
     // --- PROYECTOS ---
 
-    // Cambiamos @RequestBody Project por @RequestBody ProjectCreationRequest
     @PostMapping("/create")
     public ResponseEntity<Project> createProject(@RequestBody ProjectCreationRequest request) {
         return ResponseEntity.ok(projectService.createProject(request));

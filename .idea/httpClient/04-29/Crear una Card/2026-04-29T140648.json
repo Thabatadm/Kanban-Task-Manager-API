@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "title": "Nueva Tarea",
+  "description": "Descripción de la tarea",
+  "status": "TO_DO",
+  "position": null,
+  "priority": "MEDIUM",
+  "createdAt": "2026-04-29T14:06:48.3781293",
+  "updatedAt": "2026-04-29T14:06:48.3781293",
+  "dueDate": null,
+  "project": {
+    "id": 1,
+    "name": "Proyecto Renombrado",
+    "description": "Nueva descripción actualizada",
+    "createdAt": "2026-04-29T14:06:08.952622"
+  },
+  "assignee": null
+}
