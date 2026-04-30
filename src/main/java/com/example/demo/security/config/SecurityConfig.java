@@ -36,20 +36,18 @@ public class SecurityConfig {
         http
                 .cors(cors -> cors.configurationSource(request -> {
                     CorsConfiguration config = new CorsConfiguration();
-                    config.setAllowedOrigins(List.of("http://localhost:8080"));
+
+                    config.setAllowedOrigins(List.of("http://localhost:8080", "https://backend-de-la-api-del-gestor-de-tareas.onrender.com"));
                     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     config.setAllowedHeaders(List.of("*"));
                     return config;
                 }))
                 .csrf(AbstractHttpConfigurer::disable)
-
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
-                                .anyRequest().authenticated()
 
-
+                        .requestMatchers("/auth/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .anyRequest().authenticated()
                 )
 
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
