@@ -1,6 +1,0 @@
-// Size: 0 B
-### Obtener mi perfil
-GET http://localhost:8080/api/user/me HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MzA4NSwiZXhwIjoxNzc3NTQ5NDg1fQ.iisZT-74LdZFv6bUXLGUH2ffY0hieRlqa8XbumGBJYU
-Content-Length: 0
-
