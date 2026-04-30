@@ -29,8 +29,10 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getServletPath();
-        // Aquí pones todas las rutas que quieres que el filtro IGNORE
-        return path.startsWith("/auth/**");
+        return path.startsWith("/auth/") ||
+                path.startsWith("/swagger-ui") ||
+                path.startsWith("/v3/api-docs") ||
+                path.startsWith("/error");
     }
 
     @Override
