@@ -1,6 +1,0 @@
-// Size: 0 B
-### Obtener todas las Cards de un Proyecto
-GET http://localhost:8080/api/projects/1/cards HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MjYxMywiZXhwIjoxNzc3NTQ5MDEzfQ._XcbxJZiILq6u0fDCEGbyDf2CPsHc4CXh5pHXF-Zphw
-Content-Length: 0
-

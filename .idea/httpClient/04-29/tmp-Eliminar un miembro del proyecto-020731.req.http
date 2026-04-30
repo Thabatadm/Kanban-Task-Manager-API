@@ -1,6 +1,0 @@
-// Size: 0 B
-### Eliminar un miembro del proyecto
-DELETE http://localhost:8080/api/projects/1/members/2 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2NDMyOSwiZXhwIjoxNzc3NTUwNzI5fQ.7SV7YZFZUyfZhj5s4TBlE59_yCAqbt2vdOkeILIX8a4
-Content-Length: 0
-

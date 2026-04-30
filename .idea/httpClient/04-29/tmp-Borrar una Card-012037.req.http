@@ -1,6 +1,0 @@
-// Size: 0 B
-### Borrar una Card
-DELETE http://localhost:8080/api/projects/1/cards/delete/1 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzQ2MTUyMSwiZXhwIjoxNzc3NTQ3OTIxfQ.3qRfja65jyioJzU1sOI7yVn3-4uqY5Ld4dhm5R5GS8g
-Content-Length: 0
-
