@@ -69,6 +69,7 @@ public class UserService {
     }
 
 
+
     @Transactional
     public void deleteUser() {
         User user = getCurrentUser();

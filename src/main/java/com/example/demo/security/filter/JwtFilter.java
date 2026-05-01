@@ -1,5 +1,6 @@
 package com.example.demo.security.filter;
 
+import com.example.demo.security.service.TokenBlacklistService;
 import com.example.demo.security.utils.JwtUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -26,6 +27,9 @@ public class JwtFilter extends OncePerRequestFilter {
     @Lazy
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private TokenBlacklistService blacklistService;
+
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getRequestURI();
@@ -44,6 +48,12 @@ public class JwtFilter extends OncePerRequestFilter {
 
             if (authHeader != null && authHeader.startsWith("Bearer ")) {
                 String token = authHeader.substring(7);
+
+                if (blacklistService.isBlackListToken(token)) {
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    response.getWriter().write("Token invalidated. Please log in again.");
+                    return;
+                }
 
                 if (jwtUtils.validateToken(token)) {
                     String email = jwtUtils.getEmailFromToken(token);

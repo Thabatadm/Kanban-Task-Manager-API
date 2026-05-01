@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.util.Map;
 
+import com.example.demo.security.service.TokenBlacklistService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -31,6 +33,9 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    TokenBlacklistService blacklistService;
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         User user = new User();
@@ -54,4 +59,21 @@ public class AuthController {
 
         return ResponseEntity.ok(Map.of("token", token));
     }
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+
+        if(authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+
+
+            blacklistService.blackListToken(token);
+            return ResponseEntity.ok("Closed session");
+        }
+        return ResponseEntity.badRequest().body("Token not found");
+    }
+
+
+
 }
