@@ -1,6 +1,6 @@
 //@host = http://localhost:8080
 @host = https://backend-de-la-api-del-gestor-de-tareas.onrender.com
-@token = eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRyaWNpYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3NzYxNzY5MywiZXhwIjoxNzc3NzA0MDkzfQ.XUcr4YgWvTPUUfsQWXvy6eltGbE5gkUVRgMGHbuBP1I
+@token = PEGA_EL_TOKEN_AQUI
 @projectId = 1
 @cardId = 1
 
@@ -54,7 +54,7 @@ Authorization: Bearer {{token}}
   "lastName": "Gomez Perez"
 }
 
-### Borrar mi cuenta //
+### Borrar mi cuenta
 DELETE {{host}}/api/user/delete
 Authorization: Bearer {{token}}
 
