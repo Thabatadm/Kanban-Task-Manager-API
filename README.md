@@ -1,67 +1,319 @@
-📑 Kanban Task Manager API
-A robust RESTful API for managing Kanban-style tasks. Built with Spring Boot 21, secured with JWT, and deployed on Render. It features a complex Role-Based Access Control (RBAC) system and live documentation.
+# 📑 Kanban Task Manager API
 
-🚀 Live Documentation (Swagger)
+A robust RESTful API for managing Kanban-style tasks. Built with **Spring Boot 21**, secured with **JWT**, and deployed on **Render**.  
+It features a complete **Role-Based Access Control (RBAC)** system and live API documentation.
+
+---
+
+# 🚀 Live Documentation (Swagger)
+
 You can interact with the API and test all endpoints directly from your browser:
 
-🔗 Explore API on Swagger UI
+👉 [Explore API on Swagger UI](https://backend-de-la-api-del-gestor-de-tareas.onrender.com/swagger-ui/index.html)
 
-Note: Since this is hosted on a free Render tier, the first request may take 30-50 seconds to load while the server "wakes up".
+> ⚠️ Since this project is hosted on Render's free tier, the first request may take between **30–50 seconds** while the server wakes up.
 
-🛠️ Tech Stack
+---
 
-Java 21 & Spring Boot 3.3.4
-Spring Security with JWT (JSON Web Tokens)
-Spring Data JPA for ORM and persistence.
-PostgreSQL (Hosted on Supabase).
-Lombok to reduce boilerplate code.
-Maven for dependency management.
-Docker for containerization.
+# 🛠️ Tech Stack
 
-⚖️ Business Rules & RBAC
-The system implements a strict Role-Based Access Control (RBAC) to ensure project integrity:
+- Java 21
+- Spring Boot 3.3.4
+- Spring Security + JWT
+- Spring Data JPA
+- PostgreSQL (Supabase)
+- Lombok
+- Maven
+- Docker
 
-Feature                Master (Owner)           Developer (Member)
-Create Project              ✅                            ❌
-Manage Members              ✅                            ❌
-Create/Delete Cards         ✅                            ❌
-Edit/Move Cards             ✅                            ✅
-Delete Project              ✅                            ❌
-Self-Remove            ❌(Protected)                      ✅
+---
 
-🛡️ Security Layers
+# ⚖️ RBAC System
 
-URL Level (Spring Security): Authentication filter checks for valid JWTs. Auth routes (/auth/) are public.
-Service Level: Custom Java logic validates resource ownership (e.g., verifying the userId matches the Master role before critical deletions).
+The application implements a strict Role-Based Access Control system to protect project integrity and collaboration workflows.
 
-🧪 How to Test (Step-by-Step)
-Follow this flow in Swagger to test the full collaboration logic:
+| Action | Owner | Developer |
+|---|---|---|
+| Create project | ✅ | ❌ |
+| Manage members | ✅ | ❌ |
+| Create cards | ✅ | ❌ |
+| Edit / Move cards | ✅ | ✅ |
+| Delete cards | ✅ | ❌ |
+| Delete project | ✅ | ❌ |
+| Leave project | ❌ (Protected) | ✅ |
 
-User Setup:
-Register a Master user at /auth/register.
-Register a Developer user (different email) to simulate a teammate.
+---
 
-Authentication:
-Login at /auth/login with the Master credentials.
-Copy the token from the response.
-Click "Authorize" (top-right lock icon) and enter: Bearer YOUR_TOKEN.
+# 🛡️ Security Architecture
 
-Project Workflow:
-Create Project: POST /api/projects. You are now the Master of this ID.
-Add Member: Use POST /api/projects/{projectId}/members/{userId} using the ID of the Developer user.
-Create Tasks: Use POST /api/tasks linked to your Project ID.
-Role Verification:
-Switch authorization to the Developer token.
-Attempt to delete the project or a task. You should receive a 403 Forbidden error.
+## 🔹 URL-Level Security
 
-📂 Project Structure
+Implemented using Spring Security:
 
+- Automatic JWT validation
+- Public endpoints under `/auth/**`
+- Protected private routes
+
+---
+
+## 🔹 Service-Level Security
+
+Additional business logic validations:
+
+- Ownership verification
+- Critical action restrictions
+- Role validation before sensitive operations
+
+---
+
+# 🧪 How to Test the API
+
+## 1️⃣ Register Users
+
+### Create Owner Account
+
+```http
+POST /auth/register
+```
+
+```json
+{
+  "name": "Patricia",
+  "lastName": "Gomez",
+  "email": "patricia@example.com",
+  "password": "password123"
+}
+```
+
+---
+
+### Create Developer Account
+
+```http
+POST /auth/register
+```
+
+```json
+{
+  "name": "Pedro",
+  "lastName": "Martinez",
+  "email": "pedro@example.com",
+  "password": "password123"
+}
+```
+
+> Use different emails to simulate team collaboration.
+
+---
+
+# 2️⃣ Authentication
+
+## Login
+
+```http
+POST /auth/login
+```
+
+```json
+{
+  "email": "patricia@example.com",
+  "password": "password123"
+}
+```
+
+Copy the JWT token from the response.
+
+Then:
+
+1. Click the **Authorize** 🔒 button in Swagger
+2. Enter:
+
+```txt
+Bearer YOUR_TOKEN
+```
+
+---
+
+# 3️⃣ Project Workflow
+
+## Create Project
+
+> The user who creates the project automatically becomes the **Owner**.
+
+```http
+POST /api/projects/create
+```
+
+```json
+{
+  "name": "Task Management System",
+  "description": "Spring Boot backend project"
+}
+```
+
+---
+
+## Add Member to Project
+
+```http
+POST /api/projects/{projectId}/members
+```
+
+```json
+{
+  "userId": 2,
+  "role": "DEVELOPER"
+}
+```
+
+---
+
+## Create Card
+
+```http
+POST /api/projects/{projectId}/cards/create
+```
+
+```json
+{
+  "title": "New Task",
+  "description": "Task description",
+  "status": "TO_DO",
+  "priority": "MEDIUM"
+}
+```
+
+---
+
+# ✅ RBAC Verification
+
+Switch authorization to the **Developer** token and try to:
+
+- Delete a project
+- Delete cards
+- Manage project members
+
+### Expected Response
+
+```http
+403 Forbidden
+```
+
+---
+
+# 🖥️ Run Locally
+
+## Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git](https://github.com/Thabatadm/Backend-de-la-API-del-gestor-de-tareas-Kanban
+cd YOUR_REPOSITORY
+```
+
+---
+
+## Configure the database
+
+Create an `application.properties` file inside:
+
+```txt
+src/main/resources/
+```
+
+Add your Supabase PostgreSQL credentials:
+
+```properties
+spring.datasource.url=YOUR_SUPABASE_URL
+spring.datasource.username=YOUR_SUPABASE_USERNAME
+spring.datasource.password=YOUR_SUPABASE_PASSWORD
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+jwt.secret=YOUR_SECRET_KEY
+```
+
+---
+
+## Build Docker image
+
+```bash
+docker build -t kanban-api .
+```
+
+---
+
+## Run Docker container
+
+```bash
+docker run -p 8080:8080 kanban-api
+```
+
+The API will be available at:
+
+```txt
+http://localhost:8080
+```
+
+---
+
+## Open Swagger UI
+
+```txt
+http://localhost:8080/swagger-ui/index.html
+```
+
+---
+
+# 📂 Project Structure
+
+```bash
 src/main/java/com/example/demo/
-├── controller/    # REST Endpoints & HTTP handling
-├── service/       # Business logic & RBAC rules
-├── repository/    # JPA Data access layer (PostgreSQL)
-├── model/         # Database Entities (Project, Task, User)
-├── dto/           # Data Transfer Objects
-├── security/      # JWT Configuration & Security Filters
-├── exception/     # Global Error Handling
-└── DemoApplication.java # Application Entry Point
+│
+├── controller/     # REST endpoints
+├── service/        # Business logic and RBAC
+├── repository/     # JPA data access layer
+├── model/          # Entities (User, Project, Card)
+├── dto/            # Data Transfer Objects
+├── security/       # JWT and security configuration
+├── exception/      # Global exception handling
+│
+└── DemoApplication.java
+```
+
+---
+
+# 📄 API Testing File
+
+The repository includes a ready-to-use HTTP testing file for the VS Code REST Client extension.
+
+Example:
+
+```txt
+api-test.http
+```
+
+Included test flows:
+
+- User registration
+- Authentication
+- Project creation
+- Member management
+- Card CRUD operations
+- RBAC validation
+
+---
+
+# 🔌 Recommended VS Code Extension
+
+Install:
+
+- REST Client (by Huachao Mao)
+
+This allows you to execute HTTP requests directly from VS Code.
+
+---
+
+# © Copyright
+
+Created by **Thabata Denise Monteiro**
