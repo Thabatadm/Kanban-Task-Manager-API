@@ -1,7 +1,4 @@
 package com.example.demo.controller;
-
-import java.util.Map;
-
 import com.example.demo.security.service.TokenBlacklistService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.AuthResponseDTO;
 import com.example.demo.dto.LoginRequest;
 import com.example.demo.dto.RegisterRequest;
 import com.example.demo.model.User;
@@ -56,8 +54,13 @@ public class AuthController {
                 )
         );
         String token = jwtUtils.generateToken(auth.getName());
+        User user = userService.findByEmail(auth.getName());
 
-        return ResponseEntity.ok(Map.of("token", token));
+        return ResponseEntity.ok(new AuthResponseDTO(
+        token, 
+        user.getName(), 
+        user.getLastName()
+    ));
     }
 
     @PostMapping("/logout")
